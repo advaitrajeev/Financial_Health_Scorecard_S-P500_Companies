@@ -17,16 +17,19 @@ This report visualizes and explains the distributions, sector-level traits, and 
 ## Sector Comparison (Median Values)
 Below is the matrix of median ratios across GICS Sectors:
 
-| Sector                 |   Asset Turnover | Current Ratio   | Debt-to-Assets   | Debt-to-Equity   | EPS Growth (YoY)   | Free Cash Flow Margin   | Gross Margin   | Interest Coverage Ratio   | Net Margin   | Operating Margin   | Quick Ratio   | ROA    | ROE    |   Receivables Turnover | Revenue Growth (YoY)   |
-|:-----------------------|-----------------:|:----------------|:-----------------|:-----------------|:-------------------|:------------------------|:---------------|:--------------------------|:-------------|:-------------------|:--------------|:-------|:-------|-----------------------:|:-----------------------|
-| Consumer Discretionary |             0.55 | 1.38            | 9.31%            | 0.25             | -74.94%            | 37.95%                  | 82.96%         | N/A                       | 20.51%       | 20.78%             | 1.38          | 11.31% | 30.63% |                  65.81 | 10.26%                 |
-| Financials             |             0.15 | N/A             | 7.22%            | N/A              | -29.18%            | 14.72%                  | N/A            | N/A                       | 21.01%       | N/A                | N/A           | 3.13%  | 12.36% |                  20.78 | -9.27%                 |
-| Health Care            |             0.51 | 1.58            | 26.35%           | 0.38             | -1.26%             | 16.68%                  | 56.42%         | 13.81                     | 14.72%       | 21.29%             | 1.18          | 7.52%  | 15.92% |                   4.86 | 6.73%                  |
-| Industrials            |             0.94 | 1.60            | 19.76%           | 1.39             | -7.22%             | 9.93%                   | 39.37%         | 29.71                     | 13.64%       | 19.11%             | 1.13          | 13.00% | 49.26% |                   6.82 | 0.92%                  |
-| Information Technology |             0.63 | 1.89            | 17.53%           | 0.42             | 20.66%             | 18.03%                  | 54.23%         | 33.41                     | 11.77%       | 15.24%             | 1.72          | 8.69%  | 16.85% |                   6.38 | 8.94%                  |
-| Materials              |             0.3  | 1.81            | 32.48%           | 0.79             | -30.87%            | -8.91%                  | 22.21%         | -1.36                     | -6.60%       | 12.65%             | 1.39          | -2.04% | -3.99% |                   7.5  | -2.44%                 |
-| Real Estate            |             0.09 | 0.43            | 37.44%           | 0.82             | -568.89%           | 48.01%                  | 68.67%         | -4.37                     | -48.54%      | 18.85%             | 0.43          | -4.19% | -9.24% |                 441.42 | -3.43%                 |
-| Utilities              |             0.24 | 0.77            | 57.75%           | 7.36             | -46.61%            | -13.27%                 | 18.07%         | 1.05                      | 7.44%        | 16.10%             | 0.69          | 1.76%  | 22.40% |                   7.27 | -0.37%                 |
+| Sector                 |   Asset Turnover |   Current Ratio | Debt-to-Assets   | Debt-to-Equity   | EPS Growth (YoY)   | Free Cash Flow Margin   | Gross Margin   | Interest Coverage Ratio   | Net Margin   | Operating Margin   |   Quick Ratio | ROA    | ROE    |   Receivables Turnover | Revenue Growth (YoY)   |
+|:-----------------------|-----------------:|----------------:|:-----------------|:-----------------|:-------------------|:------------------------|:---------------|:--------------------------|:-------------|:-------------------|--------------:|:-------|:-------|-----------------------:|:-----------------------|
+| Communication Services |             0.55 |            1.19 | 31.53%           | 0.84             | 30.19%             | 15.55%                  | 58.92%         | 4.88                      | 13.14%       | 17.63%             |          1.12 | 6.28%  | 17.84% |                   8.48 | 3.35%                  |
+| Consumer Discretionary |             0.97 |            1.34 | 44.51%           | 1.32             | 0.12%              | 9.21%                   | 39.95%         | 5.97                      | 9.37%        | 15.84%             |          1.07 | 10.18% | 31.83% |                  20.72 | 4.91%                  |
+| Consumer Staples       |             0.83 |            0.95 | 38.54%           | 1.00             | -4.87%             | 9.36%                   | 36.01%         | 6.40                      | 6.61%        | 14.29%             |          0.54 | 6.43%  | 17.77% |                  14.1  | 1.73%                  |
+| Energy                 |             0.5  |            1.15 | 21.21%           | 0.49             | -8.55%             | 9.00%                   | 29.39%         | 8.02                      | 11.15%       | 19.24%             |          0.86 | 5.98%  | 12.92% |                   9.06 | -0.34%                 |
+| Financials             |             0.19 |            1.16 | 10.26%           | N/A              | 14.29%             | 22.60%                  | 53.46%         | N/A                       | 19.33%       | 27.15%             |          1.16 | 2.48%  | 13.74% |                   3.64 | 7.37%                  |
+| Health Care            |             0.56 |            1.55 | 28.74%           | 0.70             | 6.46%              | 15.25%                  | 59.37%         | 6.69                      | 12.42%       | 18.86%             |          1.19 | 6.11%  | 12.90% |                   5.85 | 6.99%                  |
+| Industrials            |             0.71 |            1.24 | 28.20%           | 0.74             | 6.74%              | 12.28%                  | 36.10%         | 9.24                      | 12.41%       | 17.16%             |          1.01 | 8.27%  | 23.78% |                   6.93 | 4.45%                  |
+| Information Technology |             0.51 |            1.6  | 24.58%           | 0.48             | 15.59%             | 22.38%                  | 57.96%         | 11.89                     | 16.31%       | 21.53%             |          1.37 | 7.57%  | 19.18% |                   5.67 | 13.39%                 |
+| Materials              |             0.56 |            1.68 | 30.50%           | 0.74             | -1.98%             | 6.66%                   | 29.18%         | 6.87                      | 6.73%        | 13.18%             |          1.17 | 4.82%  | 11.50% |                   8.42 | 3.30%                  |
+| Real Estate            |             0.15 |            0.8  | 44.86%           | 0.89             | 13.90%             | 37.88%                  | 63.14%         | 3.31                      | 21.54%       | 28.11%             |          0.8  | 3.37%  | 7.75%  |                  14.62 | 5.06%                  |
+| Utilities              |             0.19 |            0.77 | 44.78%           | 1.74             | 4.19%              | -9.93%                  | 47.20%         | 2.56                      | 13.70%       | 23.03%             |          0.6  | 2.65%  | 10.45% |                   7.75 | 9.74%                  |
 
 ### Sector Highlights:
 - **Technology & Communication Services:** High net and operating margins, low leverage, and solid cash/growth profiles.
@@ -41,196 +44,196 @@ The following companies occupy the extreme ends of the distribution for each rat
 ### Gross Margin
 
 **Top 3 Highest:**
-1. **ADBE** (Adobe Inc. - Information Technology): **89.27%**
-2. **ABNB** (Airbnb - Consumer Discretionary): **82.96%**
-3. **ABBV** (AbbVie - Health Care): **70.24%**
+1. **VICI** (Vici Properties - Real Estate): **99.33%**
+2. **APO** (Apollo Global Management - Financials): **95.50%**
+3. **INCY** (Incyte - Health Care): **92.76%**
 
 **Top 3 Lowest:**
-1. **ALB** (Albemarle Corporation - Materials): **13.00%**
-2. **AES** (AES Corporation - Utilities): **18.07%**
-3. **APD** (Air Products - Materials): **31.41%**
+1. **F** (Ford Motor Company - Consumer Discretionary): **0.90%**
+2. **COR** (Cencora - Health Care): **3.57%**
+3. **MCK** (McKesson Corporation - Health Care): **3.61%**
 
 ---
 ### Operating Margin
 
 **Top 3 Highest:**
-1. **ADBE** (Adobe Inc. - Information Technology): **36.63%**
-2. **ABBV** (AbbVie - Health Care): **32.85%**
-3. **APD** (Air Products - Materials): **24.00%**
+1. **VICI** (Vici Properties - Real Estate): **91.24%**
+2. **IBKR** (Interactive Brokers - Financials): **85.98%**
+3. **APP** (AppLovin - Information Technology): **75.75%**
 
 **Top 3 Lowest:**
-1. **ALB** (Albemarle Corporation - Materials): **1.31%**
-2. **AMD** (Advanced Micro Devices - Information Technology): **10.66%**
-3. **AKAM** (Akamai Technologies - Information Technology): **14.93%**
+1. **MRNA** (Moderna - Health Care): **-159.94%**
+2. **LITE** (Lumentum - Information Technology): **-11.68%**
+3. **IVZ** (Invesco - Financials): **-10.91%**
 
 ---
 ### Net Margin
 
 **Top 3 Highest:**
-1. **ADBE** (Adobe Inc. - Information Technology): **30.00%**
-2. **AFL** (Aflac - Financials): **21.01%**
-3. **ABNB** (Airbnb - Consumer Discretionary): **20.51%**
+1. **SPG** (Simon Property Group - Real Estate): **72.71%**
+2. **VICI** (Vici Properties - Real Estate): **69.28%**
+3. **CME** (CME Group - Financials): **62.45%**
 
 **Top 3 Lowest:**
-1. **ARE** (Alexandria Real Estate Equities - Real Estate): **-48.54%**
-2. **ALB** (Albemarle Corporation - Materials): **-9.93%**
-3. **APD** (Air Products - Materials): **-3.28%**
+1. **MRNA** (Moderna - Health Care): **-146.83%**
+2. **SATS** (EchoStar - Communication Services): **-96.62%**
+3. **ARE** (Alexandria Real Estate Equities - Real Estate): **-48.54%**
 
 ---
 ### ROE
 
 **Top 3 Highest:**
-1. **MMM** (3M - Industrials): **69.12%**
-2. **ADBE** (Adobe Inc. - Information Technology): **61.34%**
-3. **ABNB** (Airbnb - Consumer Discretionary): **30.63%**
+1. **CL** (Colgate-Palmolive - Consumer Staples): **3948.15%**
+2. **GDDY** (GoDaddy - Information Technology): **406.79%**
+3. **VRSK** (Verisk Analytics - Industrials): **293.95%**
 
 **Top 3 Lowest:**
-1. **ARE** (Alexandria Real Estate Equities - Real Estate): **-9.24%**
-2. **ALB** (Albemarle Corporation - Materials): **-5.36%**
-3. **APD** (Air Products - Materials): **-2.63%**
+1. **SATS** (EchoStar - Communication Services): **-251.43%**
+2. **HAS** (Hasbro - Consumer Discretionary): **-59.87%**
+3. **PSKY** (Paramount Skydance Corporation - Communication Services): **-52.94%**
 
 ---
 ### ROA
 
 **Top 3 Highest:**
-1. **ADBE** (Adobe Inc. - Information Technology): **24.17%**
-2. **AOS** (A. O. Smith - Industrials): **17.38%**
-3. **ACN** (Accenture - Information Technology): **11.74%**
+1. **VRSN** (Verisign - Information Technology): **62.27%**
+2. **NVDA** (Nvidia - Information Technology): **58.06%**
+3. **APP** (AppLovin - Information Technology): **45.92%**
 
 **Top 3 Lowest:**
-1. **ARE** (Alexandria Real Estate Equities - Real Estate): **-4.19%**
-2. **ALB** (Albemarle Corporation - Materials): **-3.12%**
-3. **APD** (Air Products - Materials): **-0.96%**
+1. **SATS** (EchoStar - Communication Services): **-33.70%**
+2. **MRNA** (Moderna - Health Care): **-22.87%**
+3. **PSKY** (Paramount Skydance Corporation - Communication Services): **-14.28%**
 
 ---
 ### Current Ratio
 
 **Top 3 Highest:**
-1. **AMD** (Advanced Micro Devices - Information Technology): **2.8500**
-2. **AKAM** (Akamai Technologies - Information Technology): **2.3634**
-3. **ALB** (Albemarle Corporation - Materials): **2.2292**
+1. **VICI** (Vici Properties - Real Estate): **26.6768**
+2. **DHI** (D. R. Horton - Consumer Discretionary): **17.3940**
+3. **BLK** (BlackRock - Financials): **15.7609**
 
 **Top 3 Lowest:**
-1. **ARE** (Alexandria Real Estate Equities - Real Estate): **0.4306**
-2. **ABBV** (AbbVie - Health Care): **0.6713**
-3. **AES** (AES Corporation - Utilities): **0.7657**
+1. **MAA** (Mid-America Apartment Communities - Real Estate): **0.0902**
+2. **CPT** (Camden Property Trust - Real Estate): **0.1013**
+3. **EQR** (Equity Residential - Real Estate): **0.1532**
 
 ---
 ### Quick Ratio
 
 **Top 3 Highest:**
-1. **AKAM** (Akamai Technologies - Information Technology): **2.3634**
-2. **AMD** (Advanced Micro Devices - Information Technology): **2.0124**
-3. **ALB** (Albemarle Corporation - Materials): **1.5733**
+1. **VICI** (Vici Properties - Real Estate): **26.6768**
+2. **BLK** (BlackRock - Financials): **15.7609**
+3. **IVZ** (Invesco - Financials): **12.0020**
 
 **Top 3 Lowest:**
-1. **ARE** (Alexandria Real Estate Equities - Real Estate): **0.4306**
-2. **ABBV** (AbbVie - Health Care): **0.5570**
-3. **AES** (AES Corporation - Utilities): **0.6936**
+1. **MAA** (Mid-America Apartment Communities - Real Estate): **0.0902**
+2. **CPT** (Camden Property Trust - Real Estate): **0.1013**
+3. **ORLY** (O’Reilly Automotive - Consumer Discretionary): **0.1154**
 
 ---
 ### Debt-to-Equity
 
 **Top 3 Highest:**
-1. **AES** (AES Corporation - Utilities): **7.3584**
-2. **MMM** (3M - Industrials): **2.6801**
-3. **APD** (Air Products - Materials): **1.2250**
+1. **CL** (Colgate-Palmolive - Consumer Staples): **158.4074**
+2. **LYV** (Live Nation Entertainment - Communication Services): **38.3916**
+3. **GDDY** (GoDaddy - Information Technology): **17.9572**
 
 **Top 3 Lowest:**
-1. **AMD** (Advanced Micro Devices - Information Technology): **0.0611**
-2. **AOS** (A. O. Smith - Industrials): **0.1034**
-3. **ABNB** (Airbnb - Consumer Discretionary): **0.2521**
+1. **MPWR** (Monolithic Power Systems - Information Technology): **0.0057**
+2. **INCY** (Incyte - Health Care): **0.0078**
+3. **ODFL** (Old Dominion - Industrials): **0.0093**
 
 ---
 ### Debt-to-Assets
 
 **Top 3 Highest:**
-1. **AES** (AES Corporation - Utilities): **57.75%**
-2. **ABBV** (AbbVie - Health Care): **50.39%**
-3. **AKAM** (Akamai Technologies - Information Technology): **49.44%**
+1. **DPZ** (Domino's - Consumer Discretionary): **294.11%**
+2. **FICO** (Fair Isaac - Information Technology): **164.60%**
+3. **YUM** (Yum! Brands - Consumer Discretionary): **160.90%**
 
 **Top 3 Lowest:**
-1. **AMD** (Advanced Micro Devices - Information Technology): **5.00%**
-2. **AOS** (A. O. Smith - Industrials): **6.11%**
-3. **AFL** (Aflac - Financials): **7.22%**
+1. **IBKR** (Interactive Brokers - Financials): **0.01%**
+2. **MPWR** (Monolithic Power Systems - Information Technology): **0.48%**
+3. **INCY** (Incyte - Health Care): **0.58%**
 
 ---
 ### Interest Coverage Ratio
 
 **Top 3 Highest:**
-1. **AOS** (A. O. Smith - Industrials): **53.9704**
-2. **ACN** (Accenture - Information Technology): **45.9362**
-3. **ADBE** (Adobe Inc. - Information Technology): **34.2091**
+1. **PHM** (PulteGroup - Consumer Discretionary): **4813.1008**
+2. **ODFL** (Old Dominion - Industrials): **4600.0135**
+3. **WST** (West Pharmaceutical Services - Health Care): **1202.8000**
 
 **Top 3 Lowest:**
-1. **ARE** (Alexandria Real Estate Equities - Real Estate): **-4.3672**
-2. **ALB** (Albemarle Corporation - Materials): **-1.6587**
-3. **APD** (Air Products - Materials): **-1.0593**
+1. **MRNA** (Moderna - Health Care): **-275.8000**
+2. **SNDK** (Sandisk - Information Technology): **-22.4762**
+3. **SATS** (EchoStar - Communication Services): **-11.4158**
 
 ---
 ### Asset Turnover
 
 **Top 3 Highest:**
-1. **AOS** (A. O. Smith - Industrials): **1.2187**
-2. **ACN** (Accenture - Information Technology): **1.0654**
-3. **ADBE** (Adobe Inc. - Information Technology): **0.8058**
+1. **MCK** (McKesson Corporation - Health Care): **4.9006**
+2. **COR** (Cencora - Health Care): **4.1955**
+3. **CAH** (Cardinal Health - Health Care): **4.1899**
 
 **Top 3 Lowest:**
-1. **ARE** (Alexandria Real Estate Equities - Real Estate): **0.0864**
-2. **AFL** (Aflac - Financials): **0.1490**
-3. **AES** (AES Corporation - Utilities): **0.2363**
+1. **C** (Citigroup - Financials): **0.0321**
+2. **GS** (Goldman Sachs - Financials): **0.0322**
+3. **CME** (CME Group - Financials): **0.0329**
 
 ---
 ### Receivables Turnover
 
 **Top 3 Highest:**
-1. **ARE** (Alexandria Real Estate Equities - Real Estate): **441.4231**
-2. **ABNB** (Airbnb - Consumer Discretionary): **65.8118**
-3. **AFL** (Aflac - Financials): **20.7844**
+1. **VICI** (Vici Properties - Real Estate): **1699.6674**
+2. **EVRG** (Evergy - Utilities): **596.1600**
+3. **ARE** (Alexandria Real Estate Equities - Real Estate): **441.4231**
 
 **Top 3 Lowest:**
-1. **A** (Agilent Technologies - Health Care): **4.6725**
-2. **ABBV** (AbbVie - Health Care): **4.8582**
-3. **ACN** (Accenture - Information Technology): **5.3326**
+1. **IBKR** (Interactive Brokers - Financials): **0.1130**
+2. **SCHW** (Charles Schwab Corporation - Financials): **0.2224**
+3. **HOOD** (Robinhood Markets - Financials): **0.2428**
 
 ---
 ### Revenue Growth (YoY)
 
 **Top 3 Highest:**
-1. **AMD** (Advanced Micro Devices - Information Technology): **34.34%**
-2. **ADBE** (Adobe Inc. - Information Technology): **10.53%**
-3. **ABNB** (Airbnb - Consumer Discretionary): **10.26%**
+1. **EXE** (Expand Energy - Energy): **188.77%**
+2. **APP** (AppLovin - Information Technology): **69.99%**
+3. **KEY** (KeyCorp - Financials): **65.72%**
 
 **Top 3 Lowest:**
-1. **AFL** (Aflac - Financials): **-9.27%**
-2. **ALB** (Albemarle Corporation - Materials): **-4.37%**
-3. **ARE** (Alexandria Real Estate Equities - Real Estate): **-3.43%**
+1. **MRNA** (Moderna - Health Care): **-39.92%**
+2. **PCAR** (Paccar - Industrials): **-15.50%**
+3. **ON** (ON Semiconductor - Information Technology): **-15.35%**
 
 ---
 ### EPS Growth (YoY)
 
 **Top 3 Highest:**
-1. **AMD** (Advanced Micro Devices - Information Technology): **165.00%**
-2. **ALB** (Albemarle Corporation - Materials): **48.57%**
-3. **ADBE** (Adobe Inc. - Information Technology): **35.11%**
+1. **TKO** (TKO Group Holdings - Communication Services): **11200.00%**
+2. **INCY** (Incyte - Health Care): **4173.33%**
+3. **MCHP** (Microchip Technology - Information Technology): **2300.00%**
 
 **Top 3 Lowest:**
-1. **ARE** (Alexandria Real Estate Equities - Real Estate): **-568.89%**
-2. **APD** (Air Products - Materials): **-110.30%**
-3. **ABNB** (Airbnb - Consumer Discretionary): **-74.94%**
+1. **SATS** (EchoStar - Communication Services): **-11356.82%**
+2. **CRL** (Charles River Laboratories - Health Care): **-1555.00%**
+3. **CRWD** (CrowdStrike - Information Technology): **-983.33%**
 
 ---
 ### Free Cash Flow Margin
 
 **Top 3 Highest:**
-1. **ARE** (Alexandria Real Estate Equities - Real Estate): **48.01%**
-2. **ADBE** (Adobe Inc. - Information Technology): **41.45%**
-3. **ABNB** (Airbnb - Consumer Discretionary): **37.95%**
+1. **IBKR** (Interactive Brokers - Financials): **154.02%**
+2. **STT** (State Street Corporation - Financials): **77.64%**
+3. **APP** (AppLovin - Information Technology): **71.94%**
 
 **Top 3 Lowest:**
-1. **APD** (Air Products - Materials): **-31.28%**
-2. **AES** (AES Corporation - Utilities): **-13.27%**
-3. **MMM** (3M - Industrials): **5.60%**
+1. **MRNA** (Moderna - Health Care): **-107.96%**
+2. **C** (Citigroup - Financials): **-87.02%**
+3. **JPM** (JPMorgan Chase - Financials): **-81.27%**
 
 ---
 

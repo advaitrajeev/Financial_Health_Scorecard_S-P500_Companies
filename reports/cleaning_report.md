@@ -3,9 +3,9 @@
 This report documents the cleaning decisions and ratio calculation rules applied to the S&P 500 fundamentals dataset.
 
 ## Summary Stats
-- **Total Companies Processed:** 15
-- **Financial Sector Companies:** 1 (leverage ratios excluded/modified)
-- **Companies with Negative Equity:** 1 (ROE and Debt-to-Equity adjusted)
+- **Total Companies Processed:** 503
+- **Financial Sector Companies:** 76 (leverage ratios excluded/modified)
+- **Companies with Negative Equity:** 31 (ROE and Debt-to-Equity adjusted)
 - **REITs with Missing Gross Profit:** 0 (gross profit is structurally not reported)
 
 ## Cleaning & Processing Rationale
@@ -28,6 +28,36 @@ This report documents the cleaning decisions and ratio calculation rules applied
 
 ## Negative Equity Companies List
 The following companies have negative equity due to stock buybacks or debt recapitalizations:
-| Symbol   | Security   | GICS Sector   |   Stockholders Equity |
-|:---------|:-----------|:--------------|----------------------:|
-| ABBV     | AbbVie     | Health Care   |             -3.27e+09 |
+| Symbol   | Security                    | GICS Sector            |   Stockholders Equity |
+|:---------|:----------------------------|:-----------------------|----------------------:|
+| ABBV     | AbbVie                      | Health Care            |          -3.27e+09    |
+| MO       | Altria                      | Consumer Staples       |          -3.502e+09   |
+| AZO      | AutoZone                    | Consumer Discretionary |          -3.41431e+09 |
+| BKNG     | Booking Holdings            | Consumer Discretionary |          -5.578e+09   |
+| CAH      | Cardinal Health             | Health Care            |          -2.781e+09   |
+| CCI      | Crown Castle                | Real Estate            |          -1.635e+09   |
+| DVA      | DaVita                      | Health Care            |          -6.51082e+08 |
+| DELL     | Dell Technologies           | Information Technology |          -2.47e+09    |
+| DPZ      | Domino's                    | Consumer Discretionary |          -3.90114e+09 |
+| FICO     | Fair Isaac                  | Information Technology |          -1.74578e+09 |
+| HCA      | HCA Healthcare              | Health Care            |          -6.027e+09   |
+| HLT      | Hilton Worldwide            | Consumer Discretionary |          -5.388e+09   |
+| HPQ      | HP Inc.                     | Information Technology |          -3.46e+08    |
+| IRM      | Iron Mountain               | Real Estate            |          -9.81007e+08 |
+| LOW      | Lowe's                      | Consumer Discretionary |          -9.917e+09   |
+| MAR      | Marriott International      | Consumer Discretionary |          -3.771e+09   |
+| MAS      | Masco                       | Industrials            |          -1.86e+08    |
+| MCD      | McDonald's                  | Consumer Discretionary |          -1.79e+09    |
+| MCK      | McKesson Corporation        | Health Care            |          -2.172e+09   |
+| MTD      | Mettler Toledo              | Health Care            |          -2.3636e+07  |
+| MSCI     | MSCI Inc.                   | Financials             |          -2.65454e+09 |
+| ORLY     | O’Reilly Automotive         | Consumer Discretionary |          -7.63352e+08 |
+| OTIS     | Otis Worldwide              | Industrials            |          -5.392e+09   |
+| PM       | Philip Morris International | Consumer Staples       |          -9.994e+09   |
+| SBAC     | SBA Communications          | Real Estate            |          -4.85352e+09 |
+| STX      | Seagate Technology          | Information Technology |          -4.53e+08    |
+| SBUX     | Starbucks                   | Consumer Discretionary |          -8.0966e+09  |
+| TDG      | TransDigm Group             | Industrials            |          -9.686e+09   |
+| VRSN     | Verisign                    | Information Technology |          -2.1542e+09  |
+| WYNN     | Wynn Resorts                | Consumer Discretionary |          -2.75492e+08 |
+| YUM      | Yum! Brands                 | Consumer Discretionary |          -7.325e+09   |
