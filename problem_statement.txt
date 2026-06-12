@@ -1,0 +1,58 @@
+Financial Health Scorecard — S&P 500 Companies
+================================================
+
+What are we measuring?
+----------------------
+This project measures the financial health of every company in the S&P 500 index
+across five core dimensions:
+
+  1. Profitability  — Does the business actually make money?
+  2. Liquidity      — Can it pay its bills in the next 12 months?
+  3. Leverage       — How much debt is it carrying?
+  4. Efficiency     — How well does it use its assets?
+  5. Growth         — Is the business expanding or contracting?
+
+Each company receives a composite Financial Health Score derived from standard
+financial ratios within these dimensions. No single metric tells the full story —
+a company can look profitable but be drowning in debt, or have great liquidity
+but be shrinking. All five lenses are required.
+
+Why does it matter?
+-------------------
+Financial health analysis is the foundation of equity research, credit analysis,
+and investment due diligence. Analysts at every tier — from junior associates at
+boutique advisory firms to portfolio managers at BlackRock — spend significant
+time assessing whether a company can sustain its operations, service its debt,
+and generate returns.
+
+What they don't have is a standardised, reproducible, automated version of that
+analysis across 500+ companies simultaneously. That's what this project builds.
+
+The timing matters too. With rising interest rates, higher refinancing costs, and
+slowing revenue growth in several sectors post-2022, a tool that quickly surfaces
+financially stressed companies is directly relevant to real decisions being made
+right now.
+
+Who uses it?
+------------
+  - Equity research analysts   — screening for distressed companies before
+                                  initiating coverage
+  - Portfolio managers          — monitoring existing holdings for deteriorating
+                                  fundamentals
+  - Credit risk teams           — early warning for potential covenant breaches
+  - Investment banking associates — quick comp table construction for pitch books
+  - Students and junior analysts — learning what healthy vs unhealthy looks like
+                                   across sectors
+
+Key ratios computed:
+--------------------
+  Profitability:  Net Margin, ROE, ROA, Operating Margin
+  Liquidity:      Current Ratio, Quick Ratio
+  Leverage:       Debt-to-Equity, Interest Coverage Ratio
+  Efficiency:     Asset Turnover
+  Growth:         Revenue Growth (YoY)
+
+Data sources:
+-------------
+  - S&P 500 constituent list from Wikipedia
+  - Company fundamentals via yfinance (income statement, balance sheet, cash flow)

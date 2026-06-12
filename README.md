@@ -1,0 +1,108 @@
+# 📊 Financial Health Scorecard — S&P 500 Companies
+
+A standardized, automated, and reproducible financial health assessment tool designed to analyze, score, and screen S&P 500 companies for investment, credit risk, and research purposes.
+
+---
+
+## 🔍 Executive summary:
+
+This project answers a question every equity analyst, portfolio manager, and finance student asks constantly: "Which companies are financially healthy and which are quietly distressed?" You pull real S&P 500 fundamental data, engineer the same ratios a Goldman Sachs analyst would use in a morning briefing, build a composite health score, and wrap it in a clean dashboard with sector filtering and company-level drill-down. The output looks and feels like something a real investment team would use.
+
+---
+
+## 📈 Industry context:
+
+Financial health analysis is the foundation of equity research, credit analysis, and investment due diligence. Analysts at every tier — from junior associates at boutique advisory firms to portfolio managers at BlackRock — spend significant time assessing whether a company can sustain its operations, service its debt, and generate returns. What they don't have is a standardised, reproducible, automated version of that analysis across 500+ companies simultaneously. That's what you're building.The timing matters too. With rising interest rates, higher refinancing costs, and slowing revenue growth in several sectors post-2022, a tool that quickly surfaces financially stressed companies is directly relevant to real decisions being made right now.
+
+---
+
+## 👥 Stakeholder analysis:
+The people who would actually use this tool, and what they'd use it for:
+
+*   **Equity research analysts** — screening for distressed companies before initiating coverage
+*   **Portfolio managers** — monitoring existing holdings for deteriorating fundamentals
+*   **Credit risk teams** — early warning for potential covenant breaches
+*   **Investment banking associates** — quick comp table construction for pitch books
+*   **Students and junior analysts** — learning what healthy vs unhealthy looks like across sectors
+
+---
+
+## 🎯 Defining Financial Health (Phase 1)
+
+A financially healthy company has **five core properties** working in harmony. No single metric tells the full story — a company can look profitable but be drowning in debt, or have great liquidity but be shrinking. To evaluate health accurately, we must look through all five lenses:
+
+1. **Profitability** — *"Does the business actually make money?"*
+   * A company is profitable when it converts revenue into earnings efficiently. 
+   * *Example:* Microsoft has a ~35% net margin (for every $100 of revenue, $35 becomes profit). Snap Inc. has a negative net margin (it spends more than it earns). Both are "tech companies" but lie in completely different health categories.
+2. **Liquidity** — *"Can it pay its bills in the next 12 months?"*
+   * This is short-term survival. A current ratio above 1.5 means the company has $1.50 in short-term assets for every $1 of short-term obligations. 
+   * *Example:* SVB in early 2023 had a liquidity mismatch (assets were locked in long-term bonds it couldn't sell quickly). Liquidity crises can kill even asset-rich companies.
+3. **Leverage** — *"How much debt is it carrying?"*
+   * Debt amplifies returns but also amplifies risk. The debt-to-equity ratio tells you how levered the capital structure is; the interest coverage ratio tells you how easily the company can make interest payments.
+   * *Example:* Amazon carries significant debt but generates enough free cash flow to service it comfortably. A retailer with the same debt load and declining revenue is at high risk.
+4. **Efficiency** — *"How well does it use its assets?"*
+   * Asset turnover measures how much revenue a company generates per dollar of assets. Efficiency ratios are most meaningful when compared within a specific sector.
+   * *Example:* A supermarket like Walmart turns over its asset base 2–3x per year (high velocity, thin margins). A capital-intensive manufacturer might turn over assets once every two years.
+5. **Growth** — *"Is the business expanding or contracting?"*
+   * A company can score well on all four dimensions above but be slowly dying if revenue is declining year-over-year. Growth is the leading indicator; the other four are lagging.
+   * *Example:* Netflix in 2022 had shrinking subscriber growth; its historical financials looked fine, but the trajectory was a clear warning signal.
+
+### 📋 Concrete Examples Across the Health Spectrum
+
+| Company | Why "Strong" or "At Risk" |
+| :--- | :--- |
+| **Microsoft (MSFT)** | 35%+ net margins, minimal debt relative to cash, growing revenue — strong across all 5 dimensions. |
+| **Apple (AAPL)** | Negative book equity (buybacks) but exceptional profitability and FCF — requires ratio interpretation. |
+| **Bed Bath & Beyond (2022)** | Revenue declining, high leverage, burning cash — bottom decile before bankruptcy. |
+| **SVB (2022)** | Appeared profitable but liquidity mismatch + duration risk — collapsed despite "decent" reported ratios. |
+| **Snap (SNAP)** | Negative margins, no FCF, cash burn — at risk despite revenue growth. |
+
+---
+
+## 🛠️ Key Architectural Pillars
+
+### 1. Financial Ratio & Score Engineering
+The scoring engine evaluates companies across five distinct dimensions of financial health:
+*   **Solvency & Bankruptcy Risk:** Altman Z-Score implementation to quantify default probabilities.
+*   **Liquidity Profile:** Current Ratio & Quick Ratio to evaluate short-term obligation coverage.
+*   **Financial Leverage:** Debt-to-Equity (D/E) ratio & Interest Coverage Ratio (ICR) to monitor debt load safety margins.
+*   **Profitability & Returns:** Return on Equity (ROE), Return on Assets (ROA), and Operating Margin to isolate quality earnings.
+*   **Operational Efficiency:** Asset Turnover and Cash Conversion Cycle metrics to track capital utilization.
+
+### 2. Sector Benchmarking & Norms
+Financial metrics vary wildly by sector (e.g., a healthy leverage ratio for a Utility company would spell disaster for a Software company). The scorecard normalizes scoring based on **sector-relative performance** rather than applying blunt absolute thresholds.
+
+### 3. Interactive Visualization
+A sleek, modern interface allowing:
+*   **Macro Heatmaps:** Fast sector-by-sector health comparisons.
+*   **Ranked Screening:** Sorting the S&P 500 index by overall score, solvency risk, or individual ratios.
+*   **Drill-down Analytics:** Dedicated dashboard for each company detailing historical trends and peer comparisons.
+
+---
+
+## 🚀 Getting Started
+
+*(Placeholder sections for installation and configuration, ready to be customized as the codebase develops.)*
+
+### Prerequisites
+*   Node.js (v18+) or Python (v3.9+) depending on project runtime
+*   S&P 500 API Keys (or local CSV fundamental data dump)
+
+### Installation
+```bash
+# Clone the repository
+git clone git@github.com:advaitrajeev/my_react_app.git
+cd "Financial Health Scorecard — S&P 500 companies"
+
+# Install dependencies
+npm install  # For web dashboard
+# OR
+pip install -r requirements.txt  # For computation backend
+```
+
+### Running the App
+```bash
+npm run dev
+# OR
+python main.py
+```

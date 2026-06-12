@@ -1,0 +1,12 @@
+# Core dependencies — locked versions
+pandas==2.2.3
+numpy==1.26.4
+yfinance==0.2.54
+lxml==5.3.1
+html5lib==1.1
+requests==2.32.3
+openpyxl==3.1.5
+tqdm==4.67.1
+matplotlib>=3.8.0
+seaborn>=0.13.0
+tabulate>=0.9.0
