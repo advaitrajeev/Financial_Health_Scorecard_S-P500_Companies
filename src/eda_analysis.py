@@ -39,16 +39,21 @@ plt.rcParams.update({
 })
 
 RATIOS = [
-    "Net Margin",
+    "Gross Margin",
     "Operating Margin",
+    "Net Margin",
     "ROE",
     "ROA",
     "Current Ratio",
     "Quick Ratio",
     "Debt-to-Equity",
+    "Debt-to-Assets",
     "Interest Coverage Ratio",
     "Asset Turnover",
-    "Revenue Growth (YoY)"
+    "Receivables Turnover",
+    "Revenue Growth (YoY)",
+    "EPS Growth (YoY)",
+    "Free Cash Flow Margin"
 ]
 
 

@@ -114,6 +114,8 @@ INCOME_FIELDS = [
     "Net Income",
     "EBITDA",
     "Interest Expense",
+    "EBIT",
+    "Diluted EPS",
 ]
 
 BALANCE_FIELDS = [
@@ -124,6 +126,7 @@ BALANCE_FIELDS = [
     "Total Debt",
     "Stockholders Equity",
     "Inventory",
+    "Accounts Receivable",
 ]
 
 CASHFLOW_FIELDS = [
@@ -177,6 +180,7 @@ def build_ticker_row(symbol: str) -> dict | None:
 
         # Calculate Revenue Growth (YoY)
         yoy_growth = None
+        eps_growth = None
         if income_df is not None and not income_df.empty:
             try:
                 # Find Total Revenue row
@@ -190,9 +194,22 @@ def build_ticker_row(symbol: str) -> dict | None:
                         rev_prev = float(rev_row[cols[1]])
                         if rev_prev > 0:
                             yoy_growth = (rev_latest - rev_prev) / rev_prev
+                
+                # Find Diluted EPS row
+                eps_idx = income_df.index == "Diluted EPS"
+                if eps_idx.any():
+                    eps_row = income_df.loc[eps_idx].iloc[0]
+                    cols = list(income_df.columns)
+                    if len(cols) >= 2:
+                        eps_latest = float(eps_row[cols[0]])
+                        eps_prev = float(eps_row[cols[1]])
+                        if eps_prev != 0:
+                            # Use abs(eps_prev) to correctly calculate growth if EPS was negative
+                            eps_growth = (eps_latest - eps_prev) / abs(eps_prev)
             except Exception:
                 pass
         row["Revenue Growth (YoY)"] = yoy_growth
+        row["EPS Growth (YoY)"] = eps_growth
 
         return row
 
