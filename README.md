@@ -158,3 +158,31 @@ The following 15 financial ratios form the core of the scorecard feature enginee
 *   **Free Cash Flow Margin:** `Free Cash Flow / Total Revenue`
     Measures what percentage of revenue is converted into free cash flow. High FCF margins indicate a company is highly efficient at converting sales into actual cash.
 
+---
+
+## ⚖️ Phase 6: Scoring Methodology
+
+The heart of the project is the composite health score. Generating a unified 0-100 score across 500 deeply heterogeneous companies requires handling vast differences in capital structure and business models. 
+
+### 1. Sector-Relative Percentile Ranking
+Comparing the `Debt-to-Equity` ratio of a software company (like Adobe) to an industrial manufacturer (like Boeing) is mathematically valid but analytically useless. To correct for this, **every company is ranked exclusively against its GICS Sector peers**. 
+- A 90th percentile `Current Ratio` means the company is more liquid than 90% of companies in its specific sector.
+- **Directional Scoring:** Positive indicators (like `Gross Margin`) are scored normally. Negative indicators (like `Debt-to-Assets`) are inverted (`1 - percentile`) so that higher debt translates to a lower score.
+
+### 2. Dimension Weights
+The 15 ratios are aggregated into five dimension sub-scores, which are then weighted to produce the final `Composite Health Score`.
+
+| Dimension | Weight | Rationale |
+| :--- | :--- | :--- |
+| **Profitability** | `30%` | *The ultimate engine of value.* Without consistent earnings, all other metrics eventually degrade. We assign the highest weight here because a company that can consistently generate cash can usually buy time to fix other issues. |
+| **Leverage** | `25%` | *The primary cause of death.* Excessive debt combined with poor interest coverage is the most common catalyst for bankruptcy. This is weighted heavily as a "survival" indicator. |
+| **Liquidity** | `20%` | *Short-term survival.* A company can be profitable but still go bankrupt if it cannot meet its near-term obligations (e.g., SVB). |
+| **Efficiency** | `15%` | *Operational discipline.* Measures how well management is deploying its capital base. It's important, but less existentially critical than profitability or leverage. |
+| **Growth** | `10%` | *The future trajectory.* Growth is highly prized by equity markets, but a company can be "financially healthy" while shrinking (e.g., a mature cash-cow paying high dividends). Therefore, it receives the lowest weight in a pure *health* assessment. |
+
+### 3. Final Health Labels
+Based on the final 0-100 score, companies are categorized into actionable brackets:
+- 🟢 **Strong (70 - 100):** Best-in-class balance sheet and margins within their sector.
+- 🟡 **Moderate (40 - 69):** Average performers; surviving but may have specific dimension weaknesses.
+- 🔴 **At risk (0 - 39):** Bottom-decile sector performers exhibiting significant distress, high leverage, or collapsing margins.
+
