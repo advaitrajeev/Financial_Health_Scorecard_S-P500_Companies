@@ -69,9 +69,10 @@ def clean_and_calculate_ratios() -> pd.DataFrame:
     # Convert numeric columns
     numeric_cols = [
         "Total Revenue", "Gross Profit", "Operating Income", "Net Income", "EBITDA", "Interest Expense",
+        "EBIT", "Diluted EPS", "Accounts Receivable",
         "Total Assets", "Total Liabilities Net Minority Interest", "Current Assets", "Current Liabilities",
         "Total Debt", "Stockholders Equity", "Inventory", "Operating Cash Flow", "Capital Expenditure",
-        "Free Cash Flow", "Revenue Growth (YoY)"
+        "Free Cash Flow", "Revenue Growth (YoY)", "EPS Growth (YoY)"
     ]
     for col in numeric_cols:
         if col in df.columns:
@@ -91,56 +92,45 @@ def clean_and_calculate_ratios() -> pd.DataFrame:
 
     # 4. Compute Ratios
     print("Computing financial ratios...")
+    from src import ratios
+
+    # Create missing columns if they don't exist (failsafe for yfinance data issues)
+    for col in ["EBIT", "Operating Income", "Accounts Receivable", "Revenue Growth (YoY)", "EPS Growth (YoY)", "Gross Profit"]:
+        if col not in df.columns:
+            df[col] = np.nan
 
     # Profitability Ratios
-    # Net Margin = Net Income / Total Revenue
-    df["Net Margin"] = df["Net Income"] / df["Total Revenue"]
+    df["Gross Margin"] = ratios.calc_gross_margin(df["Gross Profit"], df["Total Revenue"])
+    df["Operating Margin"] = ratios.calc_operating_margin(df["Operating Income"], df["Total Revenue"])
+    df["Net Margin"] = ratios.calc_net_profit_margin(df["Net Income"], df["Total Revenue"])
     
-    # Operating Margin = Operating Income / Total Revenue
-    df["Operating Margin"] = df["Operating Income"] / df["Total Revenue"]
-
-    # ROA = Net Income / Total Assets
-    df["ROA"] = df["Net Income"] / df["Total Assets"]
-
-    # ROE = Net Income / Stockholders Equity
-    # Note: If equity is negative, ROE is distorted. We set ROE to NaN for negative equity companies
-    # because a positive net income / negative equity looks like a "negative ROE" but is actually due to buybacks,
-    # and a negative net income / negative equity looks like a "positive ROE" (which is highly misleading).
-    df["ROE"] = np.where(df["Stockholders Equity"] > 0, df["Net Income"] / df["Stockholders Equity"], np.nan)
+    # ROA and ROE
+    clean_equity = np.where(df["Stockholders Equity"] > 0, df["Stockholders Equity"], np.nan)
+    df["ROE"] = ratios.calc_return_on_equity(df["Net Income"], pd.Series(clean_equity))
+    df["ROA"] = ratios.calc_return_on_assets(df["Net Income"], df["Total Assets"])
 
     # Liquidity Ratios
-    # Current Ratio = Current Assets / Current Liabilities
-    df["Current Ratio"] = df["Current Assets"] / df["Current Liabilities"]
-
-    # Quick Ratio = (Current Assets - Inventory) / Current Liabilities
-    df["Quick Ratio"] = (df["Current Assets"] - df["Inventory"]) / df["Current Liabilities"]
+    df["Current Ratio"] = ratios.calc_current_ratio(df["Current Assets"], df["Current Liabilities"])
+    df["Quick Ratio"] = ratios.calc_quick_ratio(df["Current Assets"], df["Inventory"], df["Current Liabilities"])
 
     # Leverage Ratios
-    # Debt-to-Equity = Total Debt / Stockholders Equity
-    # Exclude negative equity companies from simple debt/equity ranking, and exclude Financials
-    df["Debt-to-Equity"] = np.where(
-        (df["Stockholders Equity"] > 0) & (df["GICS Sector"] != "Financials"),
-        df["Total Debt"] / df["Stockholders Equity"],
-        np.nan
-    )
-
-    # Interest Coverage Ratio = Operating Income / Interest Expense
-    # Exclude Financials because interest is an operating item for them
-    # If Interest Expense is <= 0 (cash rich, no interest), we set to a very high default or NaN
-    df["Interest Coverage Ratio"] = np.where(
-        (df["GICS Sector"] != "Financials"),
-        np.where(df["Interest Expense"] > 0, df["Operating Income"] / df["Interest Expense"], np.nan),
-        np.nan
-    )
+    # Exclude negative equity and Financials from standard leverage metrics
+    lever_equity = np.where((df["Stockholders Equity"] > 0) & (df["GICS Sector"] != "Financials"), df["Stockholders Equity"], np.nan)
+    df["Debt-to-Equity"] = ratios.calc_debt_to_equity(df["Total Debt"], pd.Series(lever_equity))
+    df["Debt-to-Assets"] = ratios.calc_debt_to_assets(df["Total Debt"], df["Total Assets"])
+    
+    # Exclude Financials from Interest Coverage, fallback to Operating Income if EBIT is missing
+    safe_ebit = np.where(df["GICS Sector"] != "Financials", df["EBIT"].fillna(df["Operating Income"]), np.nan)
+    df["Interest Coverage Ratio"] = ratios.calc_interest_coverage(pd.Series(safe_ebit), df["Interest Expense"])
 
     # Efficiency Ratios
-    # Asset Turnover = Total Revenue / Total Assets
-    df["Asset Turnover"] = df["Total Revenue"] / df["Total Assets"]
+    df["Asset Turnover"] = ratios.calc_asset_turnover(df["Total Revenue"], df["Total Assets"])
+    df["Receivables Turnover"] = ratios.calc_receivables_turnover(df["Total Revenue"], df["Accounts Receivable"])
 
-    # Growth is already calculated: Revenue Growth (YoY)
-    # We will rename or align it
-    if "Revenue Growth (YoY)" not in df.columns:
-        df["Revenue Growth (YoY)"] = np.nan
+    # Growth Ratios
+    df["Revenue Growth (YoY)"] = ratios.extract_revenue_growth(df["Revenue Growth (YoY)"])
+    df["EPS Growth (YoY)"] = ratios.extract_eps_growth(df["EPS Growth (YoY)"])
+    df["Free Cash Flow Margin"] = ratios.calc_free_cash_flow_margin(df["Free Cash Flow"], df["Total Revenue"])
 
     # 5. Output results
     output_path = os.path.join(PROCESSED_DIR, "sp500_cleaned_ratios.csv")
